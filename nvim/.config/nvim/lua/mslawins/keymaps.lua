@@ -31,8 +31,10 @@ set_keymap(VimMode.Normal, '<leader>gs', ':Telescope grep_string<CR>', options)
 
 -- nvim-tree
 set_keymap(VimMode.Normal, '<leader>t', ':NvimTreeToggle<CR>', options)
+set_keymap(VimMode.Normal, '<leader>tf', ':NvimTreeToggleFindFile<CR>', options)
 set_keymap(VimMode.Normal, '<leader>tb', ':NvimTreeResize +20<CR>', options)
 set_keymap(VimMode.Normal, '<leader>ts', ':NvimTreeResize -20<CR>', options)
+-- display hints for nvim-tree g?
 
 -- nvim-comment
 set_keymap(VimMode.Normal, '<leader>c', ':CommentToggle<CR>', options)
