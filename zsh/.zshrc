@@ -11,14 +11,22 @@ ZSH_THEME="uncharted"
 
 # here goes plugins
 plugins=(extract # easy archive extraction: extract foo.zip
-         colored-man-pages # pretty man pages
-         command-not-found # suggest package name when not found
+         colored-man-pages
+         
+         # suggest package name when not found
+         command-not-found 
 
-         # completition
+         # general
          git
          docker
+         
+         # js ecosystem
          node
          npm
+         nvm
+         
+         # rust
+         rust
 
          # mac
          brew
