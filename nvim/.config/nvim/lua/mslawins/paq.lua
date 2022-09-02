@@ -36,6 +36,7 @@ require 'paq' {
   'simrat39/rust-tools.nvim',
   'mattn/emmet-vim',
   'f-person/git-blame.nvim',
+  'windwp/nvim-autopairs',
 
   -- LSP 
   'williamboman/mason.nvim',
