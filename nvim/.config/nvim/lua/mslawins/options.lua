@@ -1,8 +1,5 @@
 local o = vim.opt
 
--- TODO investigate
-o.termguicolors = true
-
 -- leader
 vim.g.mapleader = '\\'
 

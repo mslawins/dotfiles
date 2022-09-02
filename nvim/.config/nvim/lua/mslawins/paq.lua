@@ -63,35 +63,6 @@ require('nvim-treesitter.configs').setup {
   highlight = { enable = true },
 }
 
-local actions = require('telescope.actions')
-local action_state = require('telescope.actions.state')
-
-local function fzf_multi_select(prompt_bufnr)
-  local picker = action_state.get_current_picker(prompt_bufnr)
-  local num_selections = table.getn(picker:get_multi_selection())
-
-  if num_selections > 1 then
-    -- local picker = action_state.get_current_picker(prompt_bufnr)
-    for _, entry in ipairs(picker:get_multi_selection()) do
-      vim.cmd(string.format('%s %s', ':e!', entry.value))
-    end
-    vim.cmd('stopinsert')
-  else
-    actions.file_edit(prompt_bufnr)
-  end
-end
-
-require('telescope').setup {
-  defaults = { mappings = { i = { ['<esc>'] = actions.close, ['<cr>'] = fzf_multi_select } } },
-
-  -- faster fuzzy search
-  extensions = {
-    fzf = { fuzzy = true, override_generic_sorter = true, override_file_sorter = true, case_mode = 'smart_case' },
-  },
-}
-require('telescope').load_extension('fzf')
-require('telescope').load_extension('harpoon')
-
 require('nvim_comment').setup({ create_mappings = false })
 
 require('nvim-tree').setup({ view = { width = 60 } })

@@ -1,7 +1,7 @@
 local options = { noremap = true, silent = true }
 local set_keymap = vim.api.nvim_set_keymap
 local VimMode = { Normal = 'n', Visual = 'v' }
-local keymaps_path = '~/.config/nvim/lua/user/keymaps.lua'
+local keymaps_path = '~/.config/nvim/lua/mslawins/keymaps.lua'
 
 -- NeoVim mappings
 -- enter - turns off the highlight 
@@ -26,7 +26,7 @@ set_keymap(VimMode.Normal, '<c-f>', ':Telescope find_files<CR>', options)
 set_keymap(VimMode.Normal, '<c-g>', ':Telescope live_grep<CR>', options)
 set_keymap(VimMode.Normal, '<c-b>', ':Telescope buffers<CR>', options)
 set_keymap(VimMode.Normal, '<c-d>', ':Telescope diagnostics<CR>', options)
-set_keymap(VimMode.Normal, '<c-h>', ':Telescope harpoon marks<CR>', options)
+set_keymap(VimMode.Normal, '<c-u>', ':Telescope harpoon marks<CR>', { noremap = true, silent = false })
 set_keymap(VimMode.Normal, '<leader>gs', ':Telescope grep_string<CR>', options)
 
 -- nvim-tree
