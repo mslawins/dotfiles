@@ -4,8 +4,9 @@
 
 1. Clone to home directory
 2. Run:
-   -- stow \*/ - to sync everything
-   -- stow <dir_name> - to sync single config
+
+- stow \*/ - to sync everything
+- stow <dir_name> - to sync single config
 
 ### How it works
 
@@ -20,4 +21,3 @@ alacritty/.config/alacritty/.alacritty.yml is linked to ~/.config/alacritty/alac
 1. Snippets
 2. Better rust
 3. Better long vim.lsp.diagnostics.config()
-4. change mail in author
