@@ -11,6 +11,7 @@ o.colorcolumn = '120'
 o.signcolumn = 'yes'
 o.scrolloff = 8
 o.showmode = false
+o.swapfile = false
 
 -- indent
 o.expandtab = true
@@ -27,5 +28,3 @@ o.smartcase = true
 -- splits
 o.splitbelow = true
 o.splitright = true
-
-o.swapfile = false

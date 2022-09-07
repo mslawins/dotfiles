@@ -1,5 +1,13 @@
 local lspconfig = require('lspconfig')
 local cmp = require('cmp')
+local luasnip = require('luasnip')
+
+require('luasnip.loaders.from_lua').load({ paths = '~/.config/nvim/lua/mslawins/snippets' })
+
+local check_backspace = function()
+  local col = vim.fn.col('.') - 1
+  return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s')
+end
 
 local buf_map = function(bufnr, mode, lhs, rhs, opts)
   vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or { silent = true })
@@ -15,9 +23,9 @@ local on_attach = function(client, bufnr)
   buf_map(bufnr, 'n', 'ff', ':LspFormatting<CR>')
 
   -- formatting is set via null-ls, hence default tsserver formatting has to be off
-  if client.name == 'tsserver' then
-    client.resolved_capabilities.document_formatting = false
-  end
+  -- if client.name == 'tsserver' then
+  client.resolved_capabilities.document_formatting = false
+  -- end
 end
 
 cmp.setup({
@@ -29,20 +37,28 @@ cmp.setup({
 
   mapping = {
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ['<Tab>'] = function(fallback)
+    ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
+      elseif luasnip.expandable() then
+        luasnip.expand()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      elseif check_backspace() then
+        fallback()
       else
         fallback()
       end
-    end,
-    ['<S-Tab>'] = function(fallback)
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
       else
         fallback()
       end
-    end,
+    end, { 'i', 's' }),
   },
 
   sources = {
@@ -60,7 +76,7 @@ cmp.setup({
 require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 lspconfig.tsserver.setup({ on_attach = on_attach })
-lspconfig.sumneko_lua.setup {
+lspconfig.sumneko_lua.setup({
   settings = {
     Lua = {
       runtime = {
@@ -79,16 +95,16 @@ lspconfig.sumneko_lua.setup {
       },
     },
   },
-  on_attach = function(client)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
-  end,
-}
-lspconfig.angularls.setup({})
-
-lspconfig.rust_analyzer.setup({
-  on_attach = function()
-    vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
-  end,
+  on_attach = on_attach,
 })
-require('rust-tools').setup({})
+lspconfig.angularls.setup({})
+lspconfig.rust_analyzer.setup({})
+require('rust-tools').setup({
+  server = {
+    on_attach = function()
+      -- auto format file on save
+      vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
+    end,
+
+  },
+})
