@@ -51,3 +51,8 @@ set_keymap(VimMode.Normal, '<c-h>', '<c-w><c-h>', options)
 
 -- emmet
 set_keymap(VimMode.Normal, '<leader>e', ':call emmet#expandAbbr(3, \'\')<CR>', options)
+
+-- luasnip
+set_keymap(VimMode.Normal, '<leader>ls',
+           ':lua require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/mslawins/snippets" })<CR>',
+           options)

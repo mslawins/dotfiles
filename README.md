@@ -20,8 +20,8 @@ alacritty/.config/alacritty/.alacritty.yml is linked to ~/.config/alacritty/alac
 
 1. Snippets
 
-- choice nodes
-- snippets for TS / Angular
+- anything beyond basic integration
 
-2. Better rust
-3. Better long vim.lsp.diagnostics.config()
+2. Improve vim.lsp.diagnostics.config()
+
+- for long diagnostics text goes out of the screen
