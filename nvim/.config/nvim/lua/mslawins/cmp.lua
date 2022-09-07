@@ -23,7 +23,7 @@ end
 cmp.setup({
   snippet = {
     expand = function(args)
-      vim.fn['vsnip#anonymous'](args.body)
+      require('luasnip').lsp_expand(args.body)
     end,
   },
 
@@ -47,10 +47,11 @@ cmp.setup({
 
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'vsnip' },
+    { name = 'luasnip' },
     { name = 'path' },
     { name = 'buffer', keyword_length = 5 },
     { name = 'cmdline' },
+    { name = 'nvim_lua' },
   },
 
   experimental = { native_menu = false },
@@ -59,11 +60,6 @@ cmp.setup({
 require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 lspconfig.tsserver.setup({ on_attach = on_attach })
-lspconfig.rust_analyzer.setup({
-  on_attach = function()
-    vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
-  end,
-})
 lspconfig.sumneko_lua.setup {
   settings = {
     Lua = {
@@ -89,3 +85,10 @@ lspconfig.sumneko_lua.setup {
   end,
 }
 lspconfig.angularls.setup({})
+
+lspconfig.rust_analyzer.setup({
+  on_attach = function()
+    vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
+  end,
+})
+require('rust-tools').setup({})

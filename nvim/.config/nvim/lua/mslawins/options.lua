@@ -10,6 +10,7 @@ o.cursorline = true
 o.colorcolumn = '120'
 o.signcolumn = 'yes'
 o.scrolloff = 8
+o.showmode = false
 
 -- indent
 o.expandtab = true
