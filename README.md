@@ -21,6 +21,7 @@ alacritty/.config/alacritty/.alacritty.yml is linked to ~/.config/alacritty/alac
 1. Snippets
 
 - anything beyond basic integration
+- :Telescope luasnip - does not work yet
 
 2. Improve vim.lsp.diagnostics.config()
 

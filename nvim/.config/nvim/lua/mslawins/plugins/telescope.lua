@@ -37,4 +37,5 @@ local mappings = {
 
 require('telescope').setup({ defaults = { mappings = { i = mappings, n = mappings } } })
 require('telescope').load_extension('fzf')
+require('telescope').load_extension('luasnip')
 require('telescope').load_extension('harpoon')

@@ -53,7 +53,6 @@ require 'paq' {
   'jose-elias-alvarez/null-ls.nvim',
 
   -- snippets
-  'hrsh7th/vim-vsnip',
-  'hrsh7th/vim-vsnip-integ',
   'L3MON4D3/LuaSnip',
+  'benfowler/telescope-luasnip.nvim',
 }
