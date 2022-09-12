@@ -20,8 +20,8 @@ alacritty/.config/alacritty/.alacritty.yml is linked to ~/.config/alacritty/alac
 
 1. Snippets
 
-- anything beyond basic integration
 - :Telescope luasnip - does not work yet
+- https://github.com/johnpapa/vscode-angular-snippets - integrate this?
 
 2. Improve vim.lsp.diagnostics.config()
 
