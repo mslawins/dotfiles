@@ -5,19 +5,19 @@ local rep = require('luasnip.extras').rep
 local s = luasnip.s
 local i = luasnip.insert_node
 
-local it = s({ trig = 'it' }, fmt([[
+local it = s({ trig = '-it' }, fmt([[
     it('{}', () => {{ 
       {} 
     }}); 
 ]], { i(1, 'test_name'), i(0) }))
 
-local describe = s('describe', fmt([[
+local describe = s('-describe', fmt([[
     describe('{}', () => {{ 
       {}
     }});
 ]], { i(1, 'testcase'), i(0) }))
 
-local component = s({ trig = 'component' }, fmt([[
+local component = s({ trig = '-ng-component' }, fmt([[
     import {{ ChangeDetectionStrategy, Component }} from '@angular/core';
 
     @Component({{

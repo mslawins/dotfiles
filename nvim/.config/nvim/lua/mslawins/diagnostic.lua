@@ -1,6 +1,7 @@
 vim.diagnostic.config({
   virtual_text = true,
   signs = true,
+  underline = false,
   float = {
     border = 'single',
     format = function(diagnostic)

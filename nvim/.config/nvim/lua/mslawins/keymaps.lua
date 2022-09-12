@@ -56,3 +56,8 @@ set_keymap(VimMode.Normal, '<leader>e', ':call emmet#expandAbbr(3, \'\')<CR>', o
 set_keymap(VimMode.Normal, '<leader>ls',
            ':lua require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/mslawins/snippets" })<CR>',
            options)
+
+-- nvim diagnostics
+set_keymap(VimMode.Normal, '<leader>dn', ':lua vim.diagnostic.goto_next()<CR>', options)
+set_keymap(VimMode.Normal, '<leader>dp', ':lua vim.diagnostic.goto_prev()<CR>', options)
+set_keymap(VimMode.Normal, '<leader>do', ':lua vim.diagnostic.open_float()<CR>', options)

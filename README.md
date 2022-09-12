@@ -23,6 +23,7 @@ alacritty/.config/alacritty/.alacritty.yml is linked to ~/.config/alacritty/alac
 - :Telescope luasnip - does not work yet
 - https://github.com/johnpapa/vscode-angular-snippets - integrate this?
 
-2. Improve vim.lsp.diagnostics.config()
-
-- for long diagnostics text goes out of the screen
+2. Spell check
+3. Markdown preview
+4. More sane keymaps?
+5. Rust go to definition does not work
