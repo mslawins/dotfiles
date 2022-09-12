@@ -18,3 +18,4 @@ require 'mslawins.plugins.vim-matchtag'
 
 require 'mslawins.cmp'
 require 'mslawins.null-ls'
+require 'mslawins.diagnostic'
