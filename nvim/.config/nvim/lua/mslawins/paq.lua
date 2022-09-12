@@ -37,6 +37,7 @@ require 'paq' {
   'mattn/emmet-vim',
   'f-person/git-blame.nvim',
   'windwp/nvim-autopairs',
+  'leafOfTree/vim-matchtag',
 
   -- LSP 
   'williamboman/mason.nvim',
