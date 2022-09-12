@@ -31,14 +31,6 @@ require 'paq' {
   'terrortylor/nvim-comment',
   'folke/todo-comments.nvim',
 
-  -- other
-  'airblade/vim-rooter',
-  'simrat39/rust-tools.nvim',
-  'mattn/emmet-vim',
-  'f-person/git-blame.nvim',
-  'windwp/nvim-autopairs',
-  'leafOfTree/vim-matchtag',
-
   -- LSP 
   'williamboman/mason.nvim',
   'neovim/nvim-lspconfig',
@@ -56,4 +48,15 @@ require 'paq' {
   -- snippets
   'L3MON4D3/LuaSnip',
   'benfowler/telescope-luasnip.nvim',
+
+  -- autopairs & matching tags in html
+  'windwp/nvim-autopairs',
+  'leafOfTree/vim-matchtag',
+
+  -- other
+  'airblade/vim-rooter',
+  'simrat39/rust-tools.nvim',
+  'mattn/emmet-vim',
+  'f-person/git-blame.nvim',
+  'ellisonleao/glow.nvim',
 }

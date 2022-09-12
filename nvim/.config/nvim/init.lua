@@ -6,6 +6,7 @@ require 'mslawins.colorscheme'
 
 require 'mslawins.plugins.barbar'
 require 'mslawins.plugins.gitblame'
+require 'mslawins.plugins.glow'
 require 'mslawins.plugins.lualine'
 require 'mslawins.plugins.mason'
 require 'mslawins.plugins.nvim-autopairs'

@@ -18,12 +18,15 @@ alacritty/.config/alacritty/.alacritty.yml is linked to ~/.config/alacritty/alac
 
 ### TODO
 
-1. Snippets
+- Snippets
 
-- :Telescope luasnip - does not work yet
-- https://github.com/johnpapa/vscode-angular-snippets - integrate this?
+  - :Telescope luasnip - does not work yet
+  - https://github.com/johnpapa/vscode-angular-snippets - integrate this?
 
-2. Spell check
-3. Markdown preview
-4. More sane keymaps?
-5. Rust go to definition does not work
+- Spell check:
+
+  - after nvim 0.8 release
+  - more info: https://github.com/lewis6991/spellsitter.nvim
+
+- More sane keymaps?
+- Rust go to definition does not work
