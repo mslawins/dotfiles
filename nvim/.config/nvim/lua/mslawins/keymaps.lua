@@ -26,8 +26,9 @@ set_keymap(VimMode.Normal, '<c-f>', ':Telescope find_files<CR>', options)
 set_keymap(VimMode.Normal, '<c-g>', ':Telescope live_grep<CR>', options)
 set_keymap(VimMode.Normal, '<c-b>', ':Telescope buffers<CR>', options)
 set_keymap(VimMode.Normal, '<c-d>', ':Telescope diagnostics<CR>', options)
-set_keymap(VimMode.Normal, '<c-u>', ':Telescope harpoon marks<CR>', { noremap = true, silent = false })
+set_keymap(VimMode.Normal, '<c-u>', ':Telescope harpoon marks<CR>', options)
 set_keymap(VimMode.Normal, '<leader>gs', ':Telescope grep_string<CR>', options)
+set_keymap(VimMode.Normal, '<leader>tc', ':TodoTelescope<CR>', options)
 
 -- nvim-tree
 set_keymap(VimMode.Normal, '<leader>t', ':NvimTreeToggle<CR>', options)
