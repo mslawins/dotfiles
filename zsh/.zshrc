@@ -21,7 +21,7 @@ export NVM_DIR=~/.nvm
 ZSH_CUSTOM=~/.zsh_config/
 ZSH_THEME="uncharted"
 
-source ~/.zsh_config/aliases.cfg
 source ~/.oh-my-zsh/oh-my-zsh.sh
+source ~/.zsh_config/aliases.cfg
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
