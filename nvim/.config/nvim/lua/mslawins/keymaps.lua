@@ -25,10 +25,12 @@ set_keymap(VimMode.Normal, '<leader>ha', ':lua require("harpoon.mark").add_file(
 set_keymap(VimMode.Normal, '<c-f>', ':Telescope find_files<CR>', options)
 set_keymap(VimMode.Normal, '<c-g>', ':Telescope live_grep<CR>', options)
 set_keymap(VimMode.Normal, '<c-b>', ':Telescope buffers<CR>', options)
-set_keymap(VimMode.Normal, '<c-d>', ':Telescope diagnostics<CR>', options)
-set_keymap(VimMode.Normal, '<c-u>', ':Telescope harpoon marks<CR>', options)
+-- TODO need those back for ctrl + d, ctrl + u
+-- set_keymap(VimMode.Normal, '<c-d>', ':Telescope diagnostics<CR>', options)
+-- set_keymap(VimMode.Normal, '<c-u>', ':Telescope harpoon marks<CR>', options)
 set_keymap(VimMode.Normal, '<leader>gs', ':Telescope grep_string<CR>', options)
 set_keymap(VimMode.Normal, '<leader>tc', ':TodoTelescope<CR>', options)
+set_keymap(VimMode.Visual, '<leader>re', ':Telescope lsp_references<CR>', options)
 
 -- nvim-tree
 set_keymap(VimMode.Normal, '<leader>t', ':NvimTreeToggle<CR>', options)
