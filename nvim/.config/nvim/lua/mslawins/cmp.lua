@@ -108,3 +108,6 @@ require('rust-tools').setup({
 
   },
 })
+
+-- lspconfig.vls.setup({})
+lspconfig.volar.setup({})

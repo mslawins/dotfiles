@@ -1,7 +1,7 @@
 local o = vim.opt
 
 -- leader
-vim.g.mapleader = '\\'
+vim.g.mapleader = ' '
 
 -- editor
 o.mouse = 'a'
