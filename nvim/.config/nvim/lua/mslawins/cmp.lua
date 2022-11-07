@@ -24,7 +24,7 @@ local on_attach = function(client, bufnr)
 
   -- formatting is set via null-ls, hence default tsserver formatting has to be off
   -- if client.name == 'tsserver' then
-  client.resolved_capabilities.document_formatting = false
+  client.server_capabilities.document_formatting = false
   -- end
 end
 
@@ -73,7 +73,7 @@ cmp.setup({
   experimental = { native_menu = false },
 })
 
-require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 lspconfig.tsserver.setup({ on_attach = on_attach })
 lspconfig.sumneko_lua.setup({
@@ -103,11 +103,10 @@ require('rust-tools').setup({
   server = {
     on_attach = function()
       -- auto format file on save
-      vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
+      vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.format()')
     end,
 
   },
 })
 
--- lspconfig.vls.setup({})
-lspconfig.volar.setup({})
+lspconfig.volar.setup({ typescript = { tsdk = '/User/msw/.local/share/nvim/mason/typescript-language-server' } })

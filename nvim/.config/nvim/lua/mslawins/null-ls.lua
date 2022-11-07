@@ -23,6 +23,6 @@ null_ls.setup({
   },
   on_attach = function()
     -- auto format file on save
-    vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
+    vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.format()')
   end,
 })
