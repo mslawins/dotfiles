@@ -10,8 +10,8 @@ local component = s({ trig = '-v-component' }, fmt([[
   <template>
   </template>
 
-  <styles>
-  </styles>
+  <style scoped>
+  </style>
 ]], {}))
 
 return { component }
