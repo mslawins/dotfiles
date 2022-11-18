@@ -1,12 +1,12 @@
 keybinds clear-defaults=true {
     normal {
-        bind "Ctrl l" { SwitchToMode "locked"; }
+        bind "Ctrl m" { SwitchToMode "locked"; }
         bind "Ctrl p" { SwitchToMode "pane"; }
         bind "Ctrl n" { SwitchToMode "resize"; }
         bind "Ctrl t" { SwitchToMode "tab"; }
         bind "Ctrl s" { SwitchToMode "scroll"; }
         bind "Ctrl o" { SwitchToMode "session"; }
-        bind "Ctrl h" { SwitchToMode "move"; }
+        bind "Ctrl y" { SwitchToMode "move"; }
         bind "Ctrl q" { Quit; }
         bind "Alt n" { NewPane; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
