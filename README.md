@@ -21,12 +21,11 @@ alacritty/.config/alacritty/.alacritty.yml is linked to ~/.config/alacritty/alac
 - Snippets
 
   - :Telescope luasnip - does not work yet
-  - https://github.com/johnpapa/vscode-angular-snippets - integrate this?
 
 - Spell check:
 
   - after nvim 0.8 release
   - more info: https://github.com/lewis6991/spellsitter.nvim
 
-- More sane keymaps?
 - Rust go to definition does not work
+- <leader> c comments could work better in .vue files
