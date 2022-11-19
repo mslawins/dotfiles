@@ -17,7 +17,7 @@ local describe = s('-describe', fmt([[
     }});
 ]], { i(1, 'testcase'), i(0) }))
 
-local component = s({ trig = '-ng-component' }, fmt([[
+local ng_component = s({ trig = '-ng-component' }, fmt([[
     import {{ ChangeDetectionStrategy, Component }} from '@angular/core';
 
     @Component({{
@@ -30,4 +30,13 @@ local component = s({ trig = '-ng-component' }, fmt([[
     }}
 ]], { i(1), rep(1), i(2), i(0) }))
 
-return { it, describe, component }
+local pinia_store = s({ trig = '-pinia-store' }, fmt([[
+    import {{ ref }} from 'vue';
+    import {{ defineStore }} from 'pinia';
+
+    export const use{}Store = defineStore('{}', () => {{
+      return {{}}; 
+    }});
+]], { i(1), i(2) }))
+
+return { it, describe, ng_component, pinia_store }
