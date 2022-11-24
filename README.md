@@ -18,14 +18,10 @@ alacritty/.config/alacritty/.alacritty.yml is linked to ~/.config/alacritty/alac
 
 ### TODO
 
-- Snippets
-
-  - :Telescope luasnip - does not work yet
-
-- Spell check:
-
-  - after nvim 0.8 release
-  - more info: https://github.com/lewis6991/spellsitter.nvim
-
+- spell check after nvim 0.8 release, info: https://github.com/lewis6991/spellsitter.nvim
 - Rust go to definition does not work
+- .vue go to definition does not work
+- :Telescope luasnip - does not work
 - <leader> c comments could work better in .vue files
+- ctrl + g should move cursor after opening a buffer
+- lua / vim lsp leaks into other file types

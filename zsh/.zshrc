@@ -25,3 +25,8 @@ source ~/.oh-my-zsh/oh-my-zsh.sh
 source ~/.zsh_config/aliases.cfg
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# pnpm
+export PNPM_HOME="/Users/msw/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
