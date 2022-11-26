@@ -16,6 +16,9 @@ require 'mslawins.plugins.todo-comments'
 require 'mslawins.plugins.treesitter'
 require 'mslawins.plugins.vim-matchtag'
 
-require 'mslawins.cmp'
+-- TODO:
+-- old buggy config file for future reference
+-- require 'mslawins.cmp'
+require 'mslawins.cmp-new'
 require 'mslawins.null-ls'
 require 'mslawins.diagnostic'
