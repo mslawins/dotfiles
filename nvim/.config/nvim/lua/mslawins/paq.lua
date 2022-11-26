@@ -17,7 +17,7 @@ require 'paq' {
     end,
   },
 
-  -- buffer line & status line 
+  -- buffer line & status line
   'romgrk/barbar.nvim',
   'nvim-lualine/lualine.nvim',
 
@@ -29,9 +29,10 @@ require 'paq' {
 
   -- comments
   'terrortylor/nvim-comment',
+  'JoosepAlviste/nvim-ts-context-commentstring',
   'folke/todo-comments.nvim',
 
-  -- LSP 
+  -- LSP
   'williamboman/mason.nvim',
   'neovim/nvim-lspconfig',
 
