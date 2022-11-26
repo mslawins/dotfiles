@@ -1,4 +1,3 @@
--- TODO: Investogate if 'mslawins' directory is required
 require 'mslawins.options'
 require 'mslawins.keymaps'
 require 'mslawins.paq'

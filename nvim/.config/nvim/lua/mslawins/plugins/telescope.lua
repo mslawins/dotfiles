@@ -35,7 +35,10 @@ local mappings = {
   ['<CR>'] = multi_selection_open,
 }
 
-require('telescope').setup({ defaults = { mappings = { i = mappings, n = mappings } } })
+require('telescope').setup({
+  defaults = { layout_config = { height = 0.95, width = 0.90, preview_width = 0.5 } },
+  pickers = { find_files = { mappings = { i = mappings, n = mappings } } },
+})
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('luasnip')
 require('telescope').load_extension('harpoon')
