@@ -23,3 +23,4 @@ alacritty/.config/alacritty/.alacritty.yml is linked to ~/.config/alacritty/alac
 - telescope does not show hidden files
 - add more sources to cmp
 - test new cmp and remove old
+- remap ctrl + u in zellij to allow for standard vim bind
