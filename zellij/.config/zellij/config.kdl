@@ -2,7 +2,7 @@ keybinds clear-defaults=true {
     normal {
         bind "Ctrl m" { SwitchToMode "locked"; }
         bind "Ctrl p" { SwitchToMode "pane"; }
-        bind "Ctrl u" { SwitchToMode "resize"; }
+        bind "Ctrl e" { SwitchToMode "resize"; }
         bind "Ctrl t" { SwitchToMode "tab"; }
         bind "Ctrl s" { SwitchToMode "scroll"; }
         bind "Ctrl o" { SwitchToMode "session"; }
