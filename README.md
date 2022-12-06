@@ -16,11 +16,16 @@ Example:
 
 alacritty/.config/alacritty/.alacritty.yml is linked to ~/.config/alacritty/alacritty.yml
 
+### Dependencies
+
+- fzf
+- ripgrep
+- bat
+
 ### TODO
 
 - spell check after nvim 0.8 release, info: https://github.com/lewis6991/spellsitter.nvim
-- Rust go to definition does not work
-- telescope does not show hidden files
+- telescope does not show hidden files after ripgrep or fzf installation
 - add more sources to cmp
 - test new cmp and remove old
-- remap ctrl + u in zellij to allow for standard vim bind
+- figure out how exactly null-ls works
