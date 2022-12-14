@@ -18,7 +18,7 @@ set_keymap(VimMode.Normal, 'N', 'Nzz', options)
 -- nvim diagnostics
 set_keymap(VimMode.Normal, '<leader>dn', ':lua vim.diagnostic.goto_next()<CR>', options)
 set_keymap(VimMode.Normal, '<leader>dp', ':lua vim.diagnostic.goto_prev()<CR>', options)
-set_keymap(VimMode.Normal, '<leader>do', ':lua vim.diagnostic.open_float()<CR>', options)
+set_keymap(VimMode.Normal, '<leader>df', ':lua vim.diagnostic.open_float()<CR>', options)
 
 -- LSP
 set_keymap(VimMode.Normal, '<leader>gd', ':lua vim.lsp.buf.definition()<CR>', options)
@@ -28,6 +28,10 @@ set_keymap(VimMode.Normal, '<c-j>', '<c-w><c-j>', options)
 set_keymap(VimMode.Normal, '<c-k>', '<c-w><c-k>', options)
 set_keymap(VimMode.Normal, '<c-l>', '<c-w><c-l>', options)
 set_keymap(VimMode.Normal, '<c-h>', '<c-w><c-h>', options)
+
+-- simpler bindings for yank / paste between nvim register and system clipboard
+set_keymap(VimMode.Visual, '<leader>y', '"+y', options)
+set_keymap(VimMode.Normal, '<leader>p', '"+p', options)
 
 -- PLUGINS KEY MAPS
 -- buffer navigation using commands from 'romgrk/barbar.nvim'
