@@ -6,6 +6,7 @@ vim.g.mapleader = ' '
 -- editor
 o.mouse = 'a'
 o.number = true
+o.relativenumber = true
 o.cursorline = true
 o.colorcolumn = '120'
 o.signcolumn = 'yes'
