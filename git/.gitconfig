@@ -1,0 +1,6 @@
+[user]
+    name = Marek Sławiński
+    email = marek.slawinski@live.com
+
+[includeIf "gitdir:~/work/"]
+    path = ~/work/.gitconfig
