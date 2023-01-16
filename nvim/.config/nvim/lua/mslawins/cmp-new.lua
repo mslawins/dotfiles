@@ -66,7 +66,12 @@ lspconfig.sumneko_lua.setup({
   },
 })
 lspconfig.tsserver.setup({ capabilities = capabilities })
+
 lspconfig.volar.setup({
   capabilities = capabilities,
   typescript = { tsdk = '/User/msw/.local/share/nvim/mason/typescript-language-server' },
+  on_attach = function(client)
+    -- formating is done via null-ls
+    client.server_capabilities.documentFormattingProvider = false
+  end
 })

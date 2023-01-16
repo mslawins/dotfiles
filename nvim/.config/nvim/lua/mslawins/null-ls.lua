@@ -19,7 +19,9 @@ null_ls.setup({
   sources = {
     null_ls.builtins.diagnostics.eslint_d,
     null_ls.builtins.formatting.prettier,
-    null_ls.builtins.formatting.lua_format.with({ extra_args = lua_format_extra_args }),
+    -- needs install on this machine
+    -- null_ls.builtins.formatting.lua_format.with({ extra_args = lua_format_extra_args }),
+    null_ls.builtins.formatting.jq,
   },
   on_attach = function()
     -- auto format file on save
