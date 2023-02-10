@@ -11,6 +11,12 @@ local it = s({ trig = '-it' }, fmt([[
     }}); 
 ]], { i(1, 'test_name'), i(0) }))
 
+local test_content = s({ trig = '-test-content' }, fmt([[
+    const expected = null;
+    const result = {}
+    expect(result).toEqual(expected);
+]], { i(1) }))
+
 local describe = s('-describe', fmt([[
     describe('{}', () => {{ 
       {}
@@ -39,4 +45,6 @@ local pinia_store = s({ trig = '-pinia-store' }, fmt([[
     }});
 ]], { i(1), i(2) }))
 
-return { it, describe, ng_component, pinia_store }
+
+
+return { it, describe, ng_component, pinia_store, test_content }
