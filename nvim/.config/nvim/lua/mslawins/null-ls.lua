@@ -17,7 +17,9 @@ local lua_format_extra_args = {
 
 null_ls.setup({
   sources = {
-    null_ls.builtins.diagnostics.eslint_d,
+    -- TODO investigate why eslint_d does not work with
+    -- eslint plugin import in trip planner
+    null_ls.builtins.diagnostics.eslint,
     null_ls.builtins.formatting.prettier,
     -- needs install on this machine
     -- null_ls.builtins.formatting.lua_format.with({ extra_args = lua_format_extra_args }),
