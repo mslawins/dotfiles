@@ -12,16 +12,10 @@ set_keymap(VimMode.Normal, '<leader>k', ':e ' .. keymaps_path .. '<CR>', options
 -- half screen jump is always centered
 set_keymap(VimMode.Normal, '<C-u>', '<C-u>zz', options)
 set_keymap(VimMode.Normal, '<C-d>', '<C-d>zz', options)
+
+-- search is always centered
 set_keymap(VimMode.Normal, 'n', 'nzz', options)
 set_keymap(VimMode.Normal, 'N', 'Nzz', options)
-
--- nvim diagnostics
-set_keymap(VimMode.Normal, '<leader>dn', ':lua vim.diagnostic.goto_next()<CR>', options)
-set_keymap(VimMode.Normal, '<leader>dp', ':lua vim.diagnostic.goto_prev()<CR>', options)
-set_keymap(VimMode.Normal, '<leader>df', ':lua vim.diagnostic.open_float()<CR>', options)
-
--- LSP
-set_keymap(VimMode.Normal, '<leader>gd', ':lua vim.lsp.buf.definition()<CR>', options)
 
 -- split navigation
 set_keymap(VimMode.Normal, '<c-j>', '<c-w><c-j>', options)
@@ -47,9 +41,6 @@ set_keymap(VimMode.Normal, '<leader>ha', ':lua require("harpoon.mark").add_file(
 set_keymap(VimMode.Normal, '<c-f>', ':Telescope find_files<CR>', options)
 set_keymap(VimMode.Normal, '<c-g>', ':Telescope live_grep<CR>', options)
 set_keymap(VimMode.Normal, '<c-b>', ':Telescope buffers<CR>', options)
--- TODO: need those back for ctrl + d, ctrl + u
--- set_keymap(VimMode.Normal, '<c-d>', ':Telescope diagnostics<CR>', options)
--- set_keymap(VimMode.Normal, '<c-u>', ':Telescope harpoon marks<CR>', options)
 set_keymap(VimMode.Normal, '<leader>gs', ':Telescope grep_string<CR>', options)
 set_keymap(VimMode.Normal, '<leader>tc', ':TodoTelescope<CR>', options)
 set_keymap(VimMode.Visual, '<leader>re', ':Telescope lsp_references<CR>', options)
@@ -75,3 +66,24 @@ set_keymap(VimMode.Normal, '<leader>e', ':call emmet#expandAbbr(3, \'\')<CR>', o
 set_keymap(VimMode.Normal, '<leader>ls',
   ':lua require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/mslawins/snippets" })<CR>',
   options)
+
+-- lspsaga
+set_keymap(VimMode.Normal, '<leader>df', '<cmd>Lspsaga lsp_finder<CR>)', options)
+set_keymap(VimMode.Normal, '<leader>ds', '<cmd>Lspsaga show_cursor_diagnostic<CR>)', options)
+
+-- jumps
+set_keymap(VimMode.Normal, '<leader>dp', '<cmd>Lspsaga diagnostic_jump_prev<CR>', options)
+set_keymap(VimMode.Normal, '<leader>dn', '<cmd>Lspsaga diagnostic_jump_next<CR>', options)
+
+-- peek 
+set_keymap(VimMode.Normal, '<leader>pd', '<cmd>Lspsaga peek_definition<CR>', options)
+set_keymap(VimMode.Normal, '<leader>pt', '<cmd>Lspsaga peek_type_definition<CR>', options)
+
+-- goto
+set_keymap(VimMode.Normal, '<leader>gd', '<cmd>Lspsaga goto_definition<CR>', options)
+set_keymap(VimMode.Normal, '<leader>gt', '<cmd>Lspsaga goto_type_definition<CR>', options)
+
+-- rename
+set_keymap(VimMode.Normal, '<leader>rf', '<cmd>Lspsaga rename<CR>', options)
+set_keymap(VimMode.Normal, '<leader>rp', '<cmd>Lspsaga rename ++project<CR>', options)
+-- end of lspsaga

@@ -35,6 +35,7 @@ require 'paq' {
   -- LSP
   'williamboman/mason.nvim',
   'neovim/nvim-lspconfig',
+  'glepnir/lspsaga.nvim',
 
   'hrsh7th/nvim-cmp',
   'hrsh7th/cmp-nvim-lsp',
