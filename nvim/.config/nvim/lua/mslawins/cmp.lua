@@ -1,56 +1,28 @@
--- old file
-local lspconfig = require('lspconfig')
 local cmp = require('cmp')
 local luasnip = require('luasnip')
-
+local lspconfig = require('lspconfig')
 require('luasnip.loaders.from_lua').load({ paths = '~/.config/nvim/lua/mslawins/snippets' })
 
-local check_backspace = function()
-  local col = vim.fn.col('.') - 1
-  return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s')
-end
-
-local buf_map = function(bufnr, mode, lhs, rhs, opts)
-  vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or { silent = true })
-end
-
-local on_attach = function(client, bufnr)
-  vim.cmd('command! LspDef lua vim.lsp.buf.definition()')
-  vim.cmd('command! LspFormatting lua vim.lsp.buf.formatting()')
-  vim.cmd('command! LspRename lua vim.lsp.buf.rename()')
-
-  buf_map(bufnr, 'n', 'gd', ':LspDef<CR>')
-  buf_map(bufnr, 'n', 'rs', ':LspRename<CR>')
-  buf_map(bufnr, 'n', 'ff', ':LspFormatting<CR>')
-
-  -- formatting is set via null-ls, hence default tsserver formatting has to be off
-  -- if client.name == 'tsserver' then
-  client.server_capabilities.document_formatting = false
-  -- end
+local has_words_before = function()
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 
 cmp.setup({
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  },
-
   mapping = {
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif luasnip.expandable() then
-        luasnip.expand()
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
-      elseif check_backspace() then
-        fallback()
+      elseif has_words_before() then
+        cmp.complete()
       else
         fallback()
       end
     end, { 'i', 's' }),
+
     ['<S-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -61,46 +33,20 @@ cmp.setup({
       end
     end, { 'i', 's' }),
   },
-
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-    { name = 'path' },
-    { name = 'buffer', keyword_length = 5 },
-    { name = 'cmdline' },
-    { name = 'nvim_lua' },
+  sources = cmp.config.sources({ 
+    { name = 'nvim_lsp' }, { name = 'luasnip' }, { name = 'path' }}, { { name = 'buffer' } }),
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
   },
-
-  experimental = { native_menu = false },
 })
 
-require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-lspconfig.tsserver.setup({ on_attach = on_attach })
-lspconfig.sumneko_lua.setup({
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-        -- Setup your lua path
-        path = vim.split(package.path, ';'),
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = { 'vim' },
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = { [vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true },
-      },
-    },
-  },
-  on_attach = on_attach,
-})
-lspconfig.angularls.setup({})
-lspconfig.rust_analyzer.setup({})
+lspconfig.angularls.setup({ capabilities = capabilities })
 require('rust-tools').setup({
+  capabilities = capabilities,
   server = {
     on_attach = function()
       -- auto format file on save
@@ -110,4 +56,26 @@ require('rust-tools').setup({
   },
 })
 
-lspconfig.volar.setup({ typescript = { tsdk = '/User/msw/.local/share/nvim/mason/typescript-language-server' } })
+-- TODO: replace this, this is deprecated
+
+-- lspconfig.sumneko_lua.setup({
+--   settings = {
+--     Lua = {
+--       runtime = { version = 'LuaJIT', path = vim.split(package.path, ';') },
+--       diagnostics = { globals = { 'vim' } },
+--       workspace = {
+--         library = { [vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true },
+--       },
+--     },
+--   },
+-- })
+lspconfig.tsserver.setup({ capabilities = capabilities })
+
+lspconfig.volar.setup({
+  capabilities = capabilities,
+  typescript = { tsdk = '/User/msw/.local/share/nvim/mason/typescript-language-server' },
+  on_attach = function(client)
+    -- formating is done via null-ls
+    client.server_capabilities.documentFormattingProvider = false
+  end
+})
