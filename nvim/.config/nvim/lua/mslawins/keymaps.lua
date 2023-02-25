@@ -70,6 +70,7 @@ set_keymap(VimMode.Normal, '<leader>ls',
 -- lspsaga
 set_keymap(VimMode.Normal, '<leader>df', '<cmd>Lspsaga lsp_finder<CR>)', options)
 set_keymap(VimMode.Normal, '<leader>ds', '<cmd>Lspsaga show_cursor_diagnostic<CR>)', options)
+set_keymap(VimMode.Normal, '<leader>a', '<cmd>Lspsaga code_actions<CR>)', options)
 
 -- jumps
 set_keymap(VimMode.Normal, '<leader>dp', '<cmd>Lspsaga diagnostic_jump_prev<CR>', options)
