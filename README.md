@@ -21,11 +21,10 @@ alacritty/.config/alacritty/.alacritty.yml is linked to ~/.config/alacritty/alac
 - fzf
 - ripgrep
 - bat
+- zellij
+- yabai
 
 ### TODO
 
-- spell check after nvim 0.8 release, info: https://github.com/lewis6991/spellsitter.nvim
+- consider adding spellcheck: https://github.com/lewis6991/spellsitter.nvim
 - telescope does not show hidden files after ripgrep or fzf installation
-- add more sources to cmp
-- test new cmp and remove old
-- figure out how exactly null-ls works
