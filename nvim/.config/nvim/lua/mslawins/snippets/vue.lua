@@ -16,12 +16,12 @@ local component = s({ trig = '-v-component' }, fmt([[
   </style>
 ]], {}))
 
-local define_emits = s({ trig = '-v-define-emits'}, fmt([[
+local define_emits = s({ trig = '-v-define-emits' }, fmt([[
   interface {} {{
     (e: '{}',): void;
   }}
 
   const emit = defineEmits<{}>();
-]], {i(1), i(2), rep(1)}))
+]], { i(1), i(2), rep(1) }))
 
 return { component, define_emits }

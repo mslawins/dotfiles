@@ -6,10 +6,10 @@ local s = luasnip.s
 local i = luasnip.insert_node
 
 local test = s({ trig = '-test' }, fmt([[
-    #[test] 
-    fn {}() {{ 
-      {} 
-    }} 
+    #[test]
+    fn {}() {{
+      {}
+    }}
   ]], { i(1, 'test_name'), i(0) }))
 
 local modtest = s('-modtest', fmt([[

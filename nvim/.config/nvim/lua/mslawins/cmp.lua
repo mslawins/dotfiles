@@ -33,8 +33,8 @@ cmp.setup({
       end
     end, { 'i', 's' }),
   },
-  sources = cmp.config.sources({ 
-    { name = 'nvim_lsp' }, { name = 'luasnip' }, { name = 'path' }}, { { name = 'buffer' } }),
+  sources = cmp.config.sources({ { name = 'nvim_lsp' }, { name = 'luasnip' }, { name = 'path' } },
+                               { { name = 'buffer' } }),
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
@@ -56,19 +56,19 @@ require('rust-tools').setup({
   },
 })
 
--- TODO: replace this, this is deprecated
+lspconfig.lua_ls.setup({
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      runtime = { version = 'LuaJIT', path = vim.split(package.path, ';') },
+      diagnostics = { globals = { 'vim' } },
+      workspace = {
+        library = { [vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true },
+      },
+    },
+  },
+})
 
--- lspconfig.sumneko_lua.setup({
---   settings = {
---     Lua = {
---       runtime = { version = 'LuaJIT', path = vim.split(package.path, ';') },
---       diagnostics = { globals = { 'vim' } },
---       workspace = {
---         library = { [vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true },
---       },
---     },
---   },
--- })
 lspconfig.tsserver.setup({ capabilities = capabilities })
 
 lspconfig.volar.setup({
@@ -77,5 +77,5 @@ lspconfig.volar.setup({
   on_attach = function(client)
     -- formating is done via null-ls
     client.server_capabilities.documentFormattingProvider = false
-  end
+  end,
 })

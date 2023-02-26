@@ -64,8 +64,8 @@ set_keymap(VimMode.Normal, '<leader>e', ':call emmet#expandAbbr(3, \'\')<CR>', o
 
 -- luasnip
 set_keymap(VimMode.Normal, '<leader>ls',
-  ':lua require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/mslawins/snippets" })<CR>',
-  options)
+           ':lua require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/mslawins/snippets" })<CR>',
+           options)
 
 -- lspsaga
 set_keymap(VimMode.Normal, '<leader>df', '<cmd>Lspsaga lsp_finder<CR>)', options)
@@ -76,7 +76,7 @@ set_keymap(VimMode.Normal, '<leader>a', '<cmd>Lspsaga code_actions<CR>)', option
 set_keymap(VimMode.Normal, '<leader>dp', '<cmd>Lspsaga diagnostic_jump_prev<CR>', options)
 set_keymap(VimMode.Normal, '<leader>dn', '<cmd>Lspsaga diagnostic_jump_next<CR>', options)
 
--- peek 
+-- peek
 set_keymap(VimMode.Normal, '<leader>pd', '<cmd>Lspsaga peek_definition<CR>', options)
 set_keymap(VimMode.Normal, '<leader>pt', '<cmd>Lspsaga peek_type_definition<CR>', options)
 

@@ -6,9 +6,9 @@ local s = luasnip.s
 local i = luasnip.insert_node
 
 local it = s({ trig = '-it' }, fmt([[
-    it('{}', () => {{ 
-      {} 
-    }}); 
+    it('{}', () => {{
+      {}
+    }});
 ]], { i(1, 'test_name'), i(0) }))
 
 local test_content = s({ trig = '-test-content' }, fmt([[
@@ -18,7 +18,7 @@ local test_content = s({ trig = '-test-content' }, fmt([[
 ]], { i(1) }))
 
 local describe = s('-describe', fmt([[
-    describe('{}', () => {{ 
+    describe('{}', () => {{
       {}
     }});
 ]], { i(1, 'testcase'), i(0) }))
@@ -41,10 +41,8 @@ local pinia_store = s({ trig = '-pinia-store' }, fmt([[
     import {{ defineStore }} from 'pinia';
 
     export const use{}Store = defineStore('{}', () => {{
-      return {{}}; 
+      return {{}};
     }});
 ]], { i(1), i(2) }))
-
-
 
 return { it, describe, ng_component, pinia_store, test_content }
