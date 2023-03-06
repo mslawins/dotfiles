@@ -12,7 +12,7 @@ local component = s({ trig = '-v-component' }, fmt([[
   <template>
   </template>
 
-  <style scoped>
+  <style scoped lang="scss">
   </style>
 ]], {}))
 
