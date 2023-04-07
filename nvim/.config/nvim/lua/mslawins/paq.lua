@@ -7,6 +7,7 @@ require 'paq' {
   -- colorschemes & icons
   'luisiacc/gruvbox-baby',
   'kyazdani42/nvim-web-devicons',
+  'norcalli/nvim-colorizer.lua',
 
   -- treesitter
   {
