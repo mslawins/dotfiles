@@ -4,9 +4,7 @@ require 'paq' {
   'nvim-lua/plenary.nvim',
 
   -- colorschemes & icons
-  'ellisonleao/gruvbox.nvim',
   'luisiacc/gruvbox-baby',
-  'sainnhe/gruvbox-material',
   'kyazdani42/nvim-web-devicons',
 
   -- treesitter
