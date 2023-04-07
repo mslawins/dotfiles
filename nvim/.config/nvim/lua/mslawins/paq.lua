@@ -2,6 +2,7 @@ require 'paq' {
   -- package manager & lua plugins "standard library"
   'savq/paq-nvim',
   'nvim-lua/plenary.nvim',
+  'MunifTanjim/nui.nvim',
 
   -- colorschemes & icons
   'luisiacc/gruvbox-baby',
@@ -52,6 +53,9 @@ require 'paq' {
   -- autopairs & matching tags in html
   'windwp/nvim-autopairs',
   'leafOfTree/vim-matchtag',
+
+  -- AI
+  'jackMort/ChatGPT.nvim',
 
   -- other
   'airblade/vim-rooter',

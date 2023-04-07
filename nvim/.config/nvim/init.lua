@@ -4,6 +4,7 @@ require 'mslawins.paq'
 require 'mslawins.colorscheme'
 
 require 'mslawins.plugins.barbar'
+require 'mslawins.plugins.ChatGPT'
 require 'mslawins.plugins.gitblame'
 require 'mslawins.plugins.glow'
 require 'mslawins.plugins.lspsaga'

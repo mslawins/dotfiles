@@ -23,6 +23,7 @@ ZSH_THEME="uncharted"
 
 source ~/.oh-my-zsh/oh-my-zsh.sh
 source ~/.zsh_config/aliases.cfg
+source ~/.zsh_config/secret.cfg
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
