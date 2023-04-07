@@ -13,7 +13,7 @@ require 'paq' {
   {
     'nvim-treesitter/nvim-treesitter',
     run = function()
-      require('nvim-treesitter.install').update({ with_sync = true })
+      vim.cmd 'TSUpdate'
     end,
   },
 
