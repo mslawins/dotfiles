@@ -6,6 +6,10 @@ require('nvim_comment').setup({
       require('ts_context_commentstring.internal').update_commentstring()
     end
 
+    if vim.api.nvim_buf_get_option(0, 'filetype') == 'typescriptreact' then
+      require('ts_context_commentstring.internal').update_commentstring()
+    end
+
     if vim.api.nvim_buf_get_option(0, 'filetype') == 'json' then
       vim.api.nvim_buf_set_option(0, 'commentstring', '// %s')
     end
