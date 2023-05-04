@@ -1,1 +1,1 @@
-require('chatgpt').setup({ keymaps = { submit = '<Enter>' } })
+require('chatgpt').setup({ popup_input = { submit = '<Enter>' } })
