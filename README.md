@@ -28,3 +28,5 @@ alacritty/.config/alacritty/.alacritty.yml is linked to ~/.config/alacritty/alac
 
 - consider adding spellcheck: https://github.com/lewis6991/spellsitter.nvim
 - telescope does not show hidden files after ripgrep or fzf installation
+- barbar close buffer is broken in current version, update and test in the future
+- telescope multi file open for different picker than ctrl + f
