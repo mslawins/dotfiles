@@ -34,16 +34,14 @@ set_keymap(VimMode.Normal, '<s-tab>', ':BufferPrevious<CR>', options)
 set_keymap(VimMode.Normal, '<leader>q', ':BufferClose<CR>', options)
 
 -- harpoon
-set_keymap(VimMode.Normal, '<leader>h', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', options)
-set_keymap(VimMode.Normal, '<leader>ha', ':lua require("harpoon.mark").add_file()<CR>', options)
+set_keymap(VimMode.Normal, '<leader>f', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', options)
+set_keymap(VimMode.Normal, '<leader>a', ':lua require("harpoon.mark").add_file()<CR>', options)
 
 -- telescope
 set_keymap(VimMode.Normal, '<c-f>', ':Telescope find_files<CR>', options)
 set_keymap(VimMode.Normal, '<c-g>', ':Telescope live_grep<CR>', options)
 set_keymap(VimMode.Normal, '<c-b>', ':Telescope buffers<CR>', options)
 set_keymap(VimMode.Normal, '<leader>gs', ':Telescope grep_string<CR>', options)
-set_keymap(VimMode.Normal, '<leader>tc', ':TodoTelescope<CR>', options)
-set_keymap(VimMode.Visual, '<leader>re', ':Telescope lsp_references<CR>', options)
 
 -- nvim-tree
 set_keymap(VimMode.Normal, '<leader>t', ':NvimTreeToggle<CR>', options)
@@ -68,9 +66,9 @@ set_keymap(VimMode.Normal, '<leader>ls',
            options)
 
 -- lspsaga
-set_keymap(VimMode.Normal, '<leader>df', '<cmd>Lspsaga lsp_finder<CR>)', options)
-set_keymap(VimMode.Normal, '<leader>ds', '<cmd>Lspsaga show_line_diagnostics<CR>)', options)
-set_keymap(VimMode.Normal, '<leader>a', '<cmd>Lspsaga code_actions<CR>)', options)
+set_keymap(VimMode.Normal, '<leader>df', '<cmd>Lspsaga lsp_finder<CR>', options)
+set_keymap(VimMode.Normal, '<leader>ds', '<cmd>Lspsaga show_line_diagnostics<CR>', options)
+set_keymap(VimMode.Normal, '<leader>h', '<cmd>Lspsaga hover_doc<CR>', options)
 
 -- jumps
 set_keymap(VimMode.Normal, '<leader>dp', '<cmd>Lspsaga diagnostic_jump_prev<CR>', options)
