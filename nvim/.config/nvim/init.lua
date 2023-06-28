@@ -19,6 +19,7 @@ require 'mslawins.plugins.telescope'
 require 'mslawins.plugins.todo-comments'
 require 'mslawins.plugins.treesitter'
 require 'mslawins.plugins.vim-matchtag'
+require 'mslawins.plugins.vim-rooter'
 
 require 'mslawins.cmp'
 require 'mslawins.null-ls'
