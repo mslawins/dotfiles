@@ -64,5 +64,5 @@ require 'paq' {
   'mattn/emmet-vim',
   'f-person/git-blame.nvim',
   'ellisonleao/glow.nvim',
-  'ThePrimeagen/vim-be-good',
+  'chrishrb/gx.nvim',
 }
