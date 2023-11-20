@@ -18,7 +18,7 @@ local component = s({ trig = '-v-component' }, fmt([[
 
 local define_emits = s({ trig = '-v-define-emits' }, fmt([[
   interface {} {{
-    (e: '{}',): void;
+    (eventName: '{}',): void;
   }}
 
   const emit = defineEmits<{}>();
