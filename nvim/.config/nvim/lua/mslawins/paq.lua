@@ -12,7 +12,7 @@ require 'paq' {
   -- treesitter
   {
     'nvim-treesitter/nvim-treesitter',
-    run = function()
+    build = function()
       vim.cmd 'TSUpdate'
     end,
   },
@@ -23,7 +23,7 @@ require 'paq' {
 
   -- file navigation
   'nvim-telescope/telescope.nvim',
-  { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   'kyazdani42/nvim-tree.lua',
   'ThePrimeagen/harpoon',
 
