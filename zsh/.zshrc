@@ -31,3 +31,5 @@ source ~/.zsh_config/secret.cfg
 export PNPM_HOME="/Users/msw/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+eval "$(zoxide init --cmd cd zsh)"
