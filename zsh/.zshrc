@@ -28,7 +28,7 @@ source ~/.zsh_config/secret.cfg
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # pnpm
-export PNPM_HOME="/Users/msw/Library/pnpm"
+export PNPM_HOME="/Users/mslawins/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
