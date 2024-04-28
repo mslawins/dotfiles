@@ -1,6 +1,20 @@
-require 'paq' {
-  -- package manager & lua plugins "standard library"
-  'savq/paq-nvim',
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
+    lazypath,
+  })
+end
+
+vim.opt.rtp:prepend(lazypath)
+
+require('lazy').setup({
+  -- lua plugins "standard library"
   'nvim-lua/plenary.nvim',
   'MunifTanjim/nui.nvim',
 
@@ -10,12 +24,7 @@ require 'paq' {
   'norcalli/nvim-colorizer.lua',
 
   -- treesitter
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = function()
-      vim.cmd 'TSUpdate'
-    end,
-  },
+  { 'nvim-treesitter/nvim-treesitter', cmd = 'TSUpdate' },
 
   -- buffer line & status line
   'romgrk/barbar.nvim',
@@ -65,4 +74,4 @@ require 'paq' {
   'f-person/git-blame.nvim',
   'ellisonleao/glow.nvim',
   'chrishrb/gx.nvim',
-}
+})

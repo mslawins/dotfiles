@@ -1,6 +1,6 @@
 require 'mslawins.options'
 require 'mslawins.keymaps'
-require 'mslawins.paq'
+require 'mslawins.lazy'
 require 'mslawins.colorscheme'
 
 require 'mslawins.plugins.barbar'
