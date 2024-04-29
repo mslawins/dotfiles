@@ -33,9 +33,9 @@ set_keymap(VimMode.Normal, '<tab>', ':BufferNext<CR>', options)
 set_keymap(VimMode.Normal, '<s-tab>', ':BufferPrevious<CR>', options)
 set_keymap(VimMode.Normal, '<leader>q', ':BufferClose<CR>', options)
 
--- harpoon
-set_keymap(VimMode.Normal, '<leader>f', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', options)
-set_keymap(VimMode.Normal, '<leader>a', ':lua require("harpoon.mark").add_file()<CR>', options)
+-- harpoon - configured in plugins/harpoon.lua
+-- <leader>a - add file
+-- <leader>f - toggle file selector
 
 -- telescope
 set_keymap(VimMode.Normal, '<c-f>', ':Telescope find_files<CR>', options)
