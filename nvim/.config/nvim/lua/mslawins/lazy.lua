@@ -67,6 +67,10 @@ require('lazy').setup({
   -- AI
   'jackMort/ChatGPT.nvim',
 
+  -- be better at vim
+  { 'm4xshen/hardtime.nvim', dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' } },
+  'tris203/precognition.nvim',
+
   -- other
   'airblade/vim-rooter',
   'simrat39/rust-tools.nvim',

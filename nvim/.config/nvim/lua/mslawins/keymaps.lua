@@ -86,3 +86,17 @@ set_keymap(VimMode.Normal, '<leader>gt', '<cmd>Lspsaga goto_type_definition<CR>'
 set_keymap(VimMode.Normal, '<leader>rf', '<cmd>Lspsaga rename<CR>', options)
 set_keymap(VimMode.Normal, '<leader>rp', '<cmd>Lspsaga rename ++project<CR>', options)
 -- end of lspsaga
+
+function toggle_noob_mode()
+  print('Toggle noob mode with: <leader>n')
+  vim.cmd(':Hardtime toggle')
+  vim.cmd(':lua require("precognition").toggle()')
+
+  if vim.opt.relativenumber == true then
+    vim.opt.relativenumber = false
+  else
+    vim.opt.relativenumber = true
+  end
+end
+
+set_keymap(VimMode.Normal, '<leader>n', ':lua toggle_noob_mode()<CR>', options)
