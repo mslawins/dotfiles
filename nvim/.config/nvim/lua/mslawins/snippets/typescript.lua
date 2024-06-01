@@ -43,6 +43,6 @@ local pinia_store = s({ trig = '-pinia-store' }, fmt([[
     export const use{}Store = defineStore('{}', () => {{
       return {{}};
     }});
-]], { i(1), i(2) }))
+]], { i(1), rep(1) }))
 
 return { it, describe, ng_component, pinia_store, test_content }
