@@ -54,7 +54,8 @@ require('lazy').setup({
   'hrsh7th/cmp-cmdline',
   'saadparwaiz1/cmp_luasnip',
 
-  'jose-elias-alvarez/null-ls.nvim',
+  'mfussenegger/nvim-lint',
+  { 'stevearc/conform.nvim', opts = {} },
 
   -- snippets
   'L3MON4D3/LuaSnip',
