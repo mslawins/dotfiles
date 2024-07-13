@@ -6,4 +6,4 @@ working_file="/Users/mslawins/temp/working_file.json"
 
 
 mv "$eslint_file" "$backup_file"
-mv "$working_file" "$eslint_file"
+cp "$working_file" "$eslint_file"
