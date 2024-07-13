@@ -1,5 +1,41 @@
--- NOTE: Last working version of Volar is vue-language-server@1.8.27
--- To install specific version: MasonInstall vue-language-server@x.y.z
--- Versions >2.0 do not work with current LSP settings.
--- Further investigation required to fix this problem.
-require('mason').setup()
+require("mason").setup({})
+require("mason-lspconfig").setup({
+	ensure_installed = {
+		"tsserver",
+		"volar",
+	},
+	handlers = {
+		function(server_name)
+			require("lspconfig")[server_name].setup({})
+		end,
+		volar = function()
+			require("lspconfig").volar.setup({})
+		end,
+		tsserver = function()
+			local vue_typescript_plugin = require("mason-registry")
+				.get_package("vue-language-server")
+				:get_install_path() .. "/node_modules/@vue/language-server" .. "/node_modules/@vue/typescript-plugin"
+
+			require("lspconfig").tsserver.setup({
+				init_options = {
+					plugins = {
+						{
+							name = "@vue/typescript-plugin",
+							location = vue_typescript_plugin,
+							languages = { "javascript", "typescript", "vue" },
+						},
+					},
+				},
+				filetypes = {
+					"javascript",
+					"javascriptreact",
+					"javascript.jsx",
+					"typescript",
+					"typescriptreact",
+					"typescript.tsx",
+					"vue",
+				},
+			})
+		end,
+	},
+})

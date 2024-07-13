@@ -46,17 +46,6 @@ cmp.setup({
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-lspconfig.angularls.setup({ capabilities = capabilities })
-require("rust-tools").setup({
-	capabilities = capabilities,
-	server = {
-		on_attach = function()
-			-- auto format file on save
-			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
-		end,
-	},
-})
-
 lspconfig.lua_ls.setup({
 	capabilities = capabilities,
 	settings = {
@@ -71,15 +60,4 @@ lspconfig.lua_ls.setup({
 			},
 		},
 	},
-})
-
-lspconfig.tsserver.setup({ capabilities = capabilities })
-
-lspconfig.volar.setup({
-	capabilities = capabilities,
-	typescript = { tsdk = "/User/msw/.local/share/nvim/mason/typescript-language-server" },
-	on_attach = function(client)
-		-- formating is done via conform.nvim
-		client.server_capabilities.documentFormattingProvider = false
-	end,
 })
