@@ -28,6 +28,11 @@ set_keymap(VimMode.Normal, "<c-h>", "<c-w><c-h>", options)
 set_keymap(VimMode.Visual, "<leader>y", '"+y', options)
 set_keymap(VimMode.Normal, "<leader>p", '"+p', options)
 
+set_keymap(VimMode.Normal, "<leader>cn", ":cnext<CR>", options)
+set_keymap(VimMode.Normal, "<leader>cp", ":cprev<CR>", options)
+set_keymap(VimMode.Normal, "<leader>co", ":copen<CR>", options)
+set_keymap(VimMode.Normal, "<leader>cc", ":close<CR>", options)
+
 -- PLUGINS KEY MAPS
 -- buffer navigation using commands from 'romgrk/barbar.nvim'
 set_keymap(VimMode.Normal, "<tab>", ":BufferNext<CR>", options)
@@ -52,8 +57,8 @@ set_keymap(VimMode.Normal, "<leader>ts", ":NvimTreeResize -20<CR>", options)
 -- display hints for nvim-tree g?
 
 -- nvim-comment
-set_keymap(VimMode.Normal, "<leader>c", ":CommentToggle<CR>", options)
-set_keymap(VimMode.Visual, "<leader>c", ":CommentToggle<CR>", options)
+set_keymap(VimMode.Normal, "<leader>ct", ":CommentToggle<CR>", options)
+set_keymap(VimMode.Visual, "<leader>ct", ":CommentToggle<CR>", options)
 
 -- git blame
 set_keymap(VimMode.Normal, "<leader>gb", ":GitBlameToggle<CR>", options)
