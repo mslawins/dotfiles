@@ -5,8 +5,16 @@ local keymaps_path = "~/.config/nvim/lua/mslawins/keymaps.lua"
 
 -- NVIM KEY MAPS
 -- enter - turns off the highlight
--- TODO: Figure out how to bring that back, without breaking quickfix list
--- set_keymap(VimMode.Normal, "<CR>", ":noh<CR>", options)
+-- TODO: Function below does the same thing as commented out line without breaking quick fix list
+-- set_keymap(VimMode.Normal, "<CR>", ":noh<CR><CR>", options)
+vim.keymap.set("n", "<CR>", function()
+	if vim.bo.filetype == "qf" then
+		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, false, true), "n", true)
+	else
+		vim.cmd("nohlsearch")
+	end
+end, { noremap = true, silent = true })
+
 -- <leader>k - open keymaps file
 set_keymap(VimMode.Normal, "<leader>k", ":e " .. keymaps_path .. "<CR>", options)
 
