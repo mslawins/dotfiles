@@ -57,8 +57,8 @@ set_keymap(VimMode.Normal, "<leader>ts", ":NvimTreeResize -20<CR>", options)
 -- display hints for nvim-tree g?
 
 -- nvim-comment
-set_keymap(VimMode.Normal, "<leader>ct", ":CommentToggle<CR>", options)
-set_keymap(VimMode.Visual, "<leader>ct", ":CommentToggle<CR>", options)
+set_keymap(VimMode.Normal, "<leader>c", ":CommentToggle<CR>", options)
+set_keymap(VimMode.Visual, "<leader>c", ":CommentToggle<CR>", options)
 
 -- git blame
 set_keymap(VimMode.Normal, "<leader>gb", ":GitBlameToggle<CR>", options)
