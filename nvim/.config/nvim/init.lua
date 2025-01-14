@@ -27,3 +27,4 @@ require("mslawins.plugins.vim-matchtag")
 require("mslawins.plugins.vim-rooter")
 
 require("mslawins.cmp")
+require("mslawins.quickfix")
