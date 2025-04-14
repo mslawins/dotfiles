@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>HintWindowDelayAfterSpaceKeyDown</key>
+	<real>1</real>
+	<key>RecognitionDelayAfterSpaceKeyDown</key>
+	<real>0.20000000000000001</real>
+	<key>SpaceRecognitionDelayAfterLastKey</key>
+	<real>0.20000000000000004</real>
+	<key>flatKeysAndActionRows</key>
+	<string>[{"leaderKey":{"hold":{"info":{"keyCode":49,"keepPressFunction":true}}},"id":"5BA3A5FD-537E-40CB-BB42-C02A2A134D64","enabled":true,"applicationScope":{"allBut":{"paths":[]}},"keys":[3,2],"action":{"openFolder":{"folderPath":"~\/Downloads"},"description":"Open Downloads"}},{"leaderKey":{"hold":{"info":{"keyCode":49,"keepPressFunction":true}}},"id":"8A33E080-6963-43B1-A0B8-169ABE4948A6","enabled":true,"applicationScope":{"allBut":{"paths":[]}},"keys":[17],"action":{"openApp":{"path":"\/Applications\/Alacritty.app","hideAppIfRunning":false,"launchArgumentsText":""}}},{"leaderKey":{"hold":{"info":{"keyCode":49,"keepPressFunction":true}}},"id":"64119D6C-65CD-43E4-A55E-E25BAC6D5764","enabled":true,"applicationScope":{"allBut":{"paths":[]}},"keys":[8],"action":{"openApp":{"path":"\/Applications\/Google Chrome.app","hideAppIfRunning":false,"launchArgumentsText":""}}},{"leaderKey":{"hold":{"info":{"keyCode":49,"keepPressFunction":true}}},"id":"D4E3DFB8-ABE5-4971-83F7-35484A39C519","enabled":true,"applicationScope":{"allBut":{"paths":[]}},"keys":[46],"action":{"openApp":{"path":"\/Applications\/Messenger.app","hideAppIfRunning":false,"launchArgumentsText":""}}},{"leaderKey":{"hold":{"info":{"keyCode":49,"keepPressFunction":true}}},"id":"8D1FCB88-CFB0-4437-9321-BCA17DFAEA5C","enabled":true,"applicationScope":{"allBut":{"paths":[]}},"keys":[1],"action":{"openApp":{"path":"\/Applications\/Slack.app","hideAppIfRunning":false,"launchArgumentsText":""}}},{"leaderKey":{"hold":{"info":{"keyCode":49,"keepPressFunction":true}}},"id":"79829D27-04BF-4EF6-BC1C-6A3AFF161264","enabled":true,"applicationScope":{"allBut":{"paths":[]}},"keys":[9],"action":{"openApp":{"path":"\/Applications\/Visual Studio Code.app","hideAppIfRunning":false,"launchArgumentsText":""}}},{"leaderKey":{"hold":{"info":{"keyCode":49,"keepPressFunction":true}}},"id":"6BD9ED6F-7A0F-463F-BA45-32B6C84F2424","enabled":true,"applicationScope":{"allBut":{"paths":[]}},"keys":[40],"action":{"openApp":{"path":"\/Applications\/KeePassXC.app","hideAppIfRunning":false,"launchArgumentsText":""}}},{"leaderKey":{"hold":{"info":{"keyCode":49,"keepPressFunction":true}}},"id":"3B489796-7149-4964-9330-55AD7BD11FE3","enabled":true,"applicationScope":{"allBut":{"paths":[]}},"keys":[0],"action":{"openApp":{"path":"\/System\/Applications\/Music.app","hideAppIfRunning":false,"launchArgumentsText":""}}}]</string>
+</dict>
+</plist>
