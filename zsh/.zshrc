@@ -25,7 +25,7 @@ source ~/.oh-my-zsh/oh-my-zsh.sh
 source ~/.zsh_config/aliases.cfg
 source ~/.zsh_config/secret.cfg
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 # pnpm
 export PNPM_HOME="/Users/mslawins/Library/pnpm"
@@ -33,3 +33,4 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 eval "$(zoxide init --cmd cd zsh)"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
