@@ -20,6 +20,7 @@ require("lazy").setup({
 
 	-- colorschemes & icons
 	"luisiacc/gruvbox-baby",
+  "ellisonleao/gruvbox.nvim",
 	"kyazdani42/nvim-web-devicons",
 	"norcalli/nvim-colorizer.lua",
 
